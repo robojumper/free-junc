@@ -1,0 +1,11 @@
+[package]
+name = "free-junc"
+version = "1.0.0"
+edition = "2018"
+
+[dependencies]
+pico-args = "0.4.1"
+walkdir = "2"
+junction = "0.2"
+# junction only builds with winapi's std type
+winapi = { version = "0.3.9", features = ["std"] }
