@@ -7,15 +7,15 @@ It accepts `junction.exe`'s command line arguments, so it can be used in place o
 
 ```
 free-junc v1.0: Create, delete and list NTFS junctions.
-Usage: target\release\free-junc.exe [-s] [-q] <directory>
+Usage: free-junc.exe [-s] [-q] <directory>
     List junction, if it exists, at the given directory.
       -s: Recursive. Print all junctions at and below the given directory.
       -q: Quiet. Do not report filesystem access errors.
 
-Usage: target\release\free-junc.exe <junction directory> <target directory>
+Usage: free-junc.exe <junction directory> <target directory>
     Create a junction from <junction directory> to <target directory>.
 
-Usage: target\release\free-junc.exe -d <junction directory>
+Usage: free-junc.exe -d <junction directory>
     Remove the junction at <junction directory> and remove the resulting empty directory.
 ```
 

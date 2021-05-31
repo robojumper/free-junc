@@ -1,0 +1,32 @@
+name: build
+
+on:
+  push:
+    branches:
+    - main
+
+jobs:
+  build:
+    name: build
+    runs-on: windows-2019
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 1
+
+    - name: Install Rust
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        profile: minimal
+
+    - name: Build release binary
+      run: cargo build --release
+
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1
+      with:
+        name: free-junc.exe
+        path: target/release/free-junc.exe
