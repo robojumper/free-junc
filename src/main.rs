@@ -107,6 +107,10 @@ fn create_junction(src: &OsStr, dest: &OsStr) -> Result<(), String> {
 fn main() -> Result<(), String> {
     let mut args = Arguments::from_env();
 
+    // silently drop original junction args
+    let _ = args.contains("-nobanner");
+    let _ = args.contains("-accepteula");
+
     if args.contains("-d") {
         let paths = get_free_os_strs(&mut args);
         return if paths.len() != 1 {
